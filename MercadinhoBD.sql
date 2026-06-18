@@ -1,9 +1,9 @@
 CREATE TABLE categoria (
    id_categoria SERIAL PRIMARY KEY,
    nome_categoria VARCHAR (50) NOT NULL UNIQUE
-);
+); 
 
-CREATE TABLE produto(
+CREATE TABLE produto (
    id_produto SERIAL PRIMARY KEY,
    id_categoria INTEGER NOT NULL,
    nome_produto VARCHAR(100) NOT NULL,
@@ -65,7 +65,7 @@ CREATE TABLE estoque(
 
    CONSTRAINT fk_estoque_produto
    FOREIGN KEY (id_produto)
-   REFERENCES produto(id_produto),
+   REFERENCES produto(id_produto), 
 
    CONSTRAINT ck_quantidade_estoque
    CHECK (quantidade_estoque >=0)
@@ -88,7 +88,7 @@ VALUES
 (4,'Chocolate ao Leite',9.50),
 (5,'Alvejante Liquido',4.00);
 
-INSERT INTO cliente
+INSERT INTO cliente 
 (nome_cliente,cpf_cliente,email_cliente)
 VALUES
 ('Alessandra Silva','11122233344','bahia@gmail.com'),
